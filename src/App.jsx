@@ -1,7 +1,8 @@
+import "./App.scss";
 function App() {
   return (
     <>
-      <div>React App</div>
+      <div className="test">React App</div>
     </>
   );
 }

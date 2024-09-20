@@ -1,0 +1,17 @@
+@use "../abstracts/palette" as *;
+
+:root {
+  @each $key, $value in $common {
+    --#{$key}: #{$value};
+  }
+}
+
+html {
+  font-family: "Poppins";
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-1);
+  color: var(--black-1);
+}
