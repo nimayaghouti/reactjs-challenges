@@ -1,0 +1,30 @@
+.header {
+  @include flex($justify: space-around);
+  background-color: var(--primary);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__logo {
+    @include flex();
+    gap: 1rem;
+  }
+}
+
+.menu {
+  @include flex();
+  gap: 1rem;
+
+  &__item {
+    color: purple;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    &_active {
+      background-color: purple;
+      color: white;
+    }
+  }
+}
