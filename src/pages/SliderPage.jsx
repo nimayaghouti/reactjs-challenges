@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
-import instance from "../services/apiService";
+const sliderImages = [
+  {
+    image:
+      "https://dummyjson.com/image/600x400/592b27?fontFamily=pacifico&text=Nimarco",
+    title: "Nimarco",
+  },
+  {
+    image:
+      "https://dummyjson.com/image/600x400/2d0266?fontFamily=pacifico&text=ArcoRuby",
+    title: "ArcoRuby",
+  },
+  {
+    image:
+      "https://dummyjson.com/image/600x400/331203?fontFamily=pacifico&text=NimaYaghouti",
+    title: "NimaYaghouti",
+  },
+  {
+    image:
+      "https://dummyjson.com/image/600x400/282828?fontFamily=pacifico&text=BingArco",
+    title: "BingArco",
+  },
+];
+
+import Slider from "../components/view/Slider";
 
 const SliderPage = () => {
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
-    const getImages = async () => {
-      try {
-        const data = await instance.get("recipes?limit=10");
-        setRecipes(data.data.recipes);
-        console.log(data.data.recipes);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
-
-    getImages();
-  }, []);
-  return (
-    <>
-      {recipes.map((recipe) => (
-        <img src={recipe.image} key={recipe.id} />
-      ))}
-    </>
-  );
+  return <Slider slides={sliderImages} />;
 };
 
 export default SliderPage;
