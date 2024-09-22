@@ -1,15 +1,22 @@
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "/vite.svg";
 import classes from "./Header.module.scss";
+import useClickOutside from "@/hooks/useClickOutside";
 
-const header = () => {
+const Header = () => {
+  const headerRef = useRef(null);
   const linkClass = ({ isActive }) =>
     isActive
       ? `${classes.menu__item} ${classes.menu__item_active}`
       : classes.menu__item;
 
+  useClickOutside(headerRef, () => {
+    console.log("Outside of header clicked!");
+  });
+
   return (
-    <header className={classes.header}>
+    <header ref={headerRef} className={classes.header}>
       <div className={classes.header__logo}>
         <img src={logo} alt="logo" />
         <h2>ReactJs Challenges</h2>
@@ -27,4 +34,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
