@@ -1,0 +1,31 @@
+.table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+
+  &__row {
+    display: flex;
+    border-radius: 8px;
+
+    &_header {
+      background-color: var(--primary);
+    }
+
+    &_body:nth-child(even) {
+      background-color: var(--gray-2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+
+  &__data {
+    @include flex();
+    height: 60px;
+    padding: 10px;
+    flex: 1 0 0;
+
+    &_header {
+      @include text-style($color: #fff, $weight: 600);
+    }
+  }
+}

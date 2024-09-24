@@ -1,0 +1,30 @@
+.pagination {
+  @include flex();
+  gap: 0.5rem;
+
+  &__button {
+    @include flex;
+    @include text-style($size: 14px, $weight: 600);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--gray-2);
+    border-radius: 0.25rem;
+    list-style-type: none;
+    cursor: pointer;
+
+    &_disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &_active {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: var(--primary);
+    }
+  }
+}

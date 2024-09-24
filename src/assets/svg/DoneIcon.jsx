@@ -2,8 +2,8 @@ const DoneIcon = () => {
   return (
     <svg
       fill="currentColor"
-      width="800px"
-      height="800px"
+      width="12"
+      height="12"
       viewBox="0 0 24 24"
       id="d9090658-f907-4d85-8bc1-743b70378e93"
       data-name="Livello 1"

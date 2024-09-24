@@ -12,7 +12,7 @@ const Header = () => {
       : classes.menu__item;
 
   useClickOutside(headerRef, () => {
-    console.log("Outside of header clicked!");
+    // console.log("Outside of header clicked!");
   });
 
   return (
@@ -28,6 +28,9 @@ const Header = () => {
         </NavLink>
         <NavLink to="/slider" className={linkClass}>
           Slider
+        </NavLink>
+        <NavLink to="/table-pagination" className={linkClass}>
+          Table Pagination
         </NavLink>
       </nav>
     </header>

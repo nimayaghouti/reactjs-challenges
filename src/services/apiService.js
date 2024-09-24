@@ -4,7 +4,7 @@ const BASE_URL = "https://dummyjson.com/";
 
 const instance = axios.create({
   baseURL: BASE_URL,
-  timeout: 3000,
+  timeout: 5000,
 });
 
 instance.interceptors.request.use(
