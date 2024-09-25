@@ -1,0 +1,9 @@
+.form {
+  @include flex($direction: column, $align: stretch);
+  background-color: #fff;
+  width: 90%;
+  max-width: 30rem;
+  border-radius: 1rem;
+  gap: 1.5rem;
+  padding: 1rem;
+}

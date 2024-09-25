@@ -32,6 +32,9 @@ const Header = () => {
         <NavLink to="/table-pagination" className={linkClass}>
           Table Pagination
         </NavLink>
+        <NavLink to="/form" className={linkClass}>
+          Form
+        </NavLink>
       </nav>
     </header>
   );

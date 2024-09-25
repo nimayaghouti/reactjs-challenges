@@ -8,6 +8,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import SliderPage from "./pages/SliderPage";
 import TablePage, { todoLoader } from "./pages/TablePage";
+import { FormPage } from "./pages/FormPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./App.scss";
 
@@ -22,6 +23,7 @@ const App = () => {
           element={<TablePage />}
           loader={todoLoader}
         />
+        <Route path="/form" element={<FormPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )

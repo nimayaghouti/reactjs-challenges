@@ -1,0 +1,22 @@
+.form-group {
+  @include flex($direction: column, $align: stretch);
+  gap: 0.5rem;
+
+  &__label {
+    color: var(--black-2);
+  }
+
+  &__input {
+    background-color: var(--bg-2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    &:focus {
+      outline: 2px solid var(--primary);
+    }
+  }
+
+  &__error {
+    color: crimson;
+  }
+}

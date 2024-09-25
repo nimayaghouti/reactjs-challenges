@@ -18,12 +18,16 @@
   gap: 1rem;
 
   &__item {
-    color: purple;
+    @include text-style($color: #363636, $weight: 500);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 
+    &:not(&_active):hover {
+      background-color: #3636361a;
+    }
+
     &_active {
-      background-color: purple;
+      background-color: #363636;
       color: white;
     }
   }
