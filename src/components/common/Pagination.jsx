@@ -1,6 +1,6 @@
 import ArrowLeftIcon from "@/assets/svg/ArrowLeftIcon";
 import ArrowRightIcon from "@/assets/svg/ArrowRightIcon";
-import "./TablePagination.scss";
+import "./Pagination.scss";
 
 const TablePagination = ({ totalPages, currentPage, onPageChange }) => {
   const isPrevDisabled = currentPage <= 1;

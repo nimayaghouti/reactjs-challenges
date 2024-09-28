@@ -4,7 +4,16 @@ import Table from "../components/view/table/Table";
 
 const TablePage = () => {
   const todos = useLoaderData();
-  return <Table data={todos} />;
+  const formattedTodos = todos.map((todo) => ({
+    ...todo,
+    completed: todo.completed ? "Completed" : "Incomplete",
+  }));
+  const columns = [
+    { title: "Title", key: "todo" },
+    { title: "Status", key: "completed" },
+    { title: "User Id", key: "userId" },
+  ];
+  return <Table data={formattedTodos} itemsPerPage={5} columns={columns} />;
 };
 
 const todoLoader = async () => {

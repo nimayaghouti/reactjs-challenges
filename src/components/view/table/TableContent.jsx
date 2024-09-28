@@ -1,25 +1,25 @@
-import DoneIcon from "@/assets/svg/DoneIcon";
 import "./TableContent.scss";
 
-const TableContent = ({ pageData }) => {
+const TableContent = ({ pageData, columns }) => {
   return (
     <table className="table">
       <thead className="table__header">
         <tr className="table__row table__row_header">
-          <td className="table__data table__data_header">Title</td>
-          <td className="table__data table__data_header">Status</td>
-          <td className="table__data table__data_header">UserId</td>
+          {columns.map((col, index) => (
+            <td key={index} className="table__data table__data_header">
+              {col.title}
+            </td>
+          ))}
         </tr>
       </thead>
       <tbody className="table__body">
         {pageData.map((data) => (
           <tr className="table__row table__row_body" key={data.id}>
-            <td className="table__data">{data.todo}</td>
-            <td className="table__data">
-              {data.completed ? "Completed" : "Incomplete"}
-              {data.completed && <DoneIcon />}
-            </td>
-            <td className="table__data">{data.userId}</td>
+            {columns.map((col, index) => (
+              <td key={index} className="table__data">
+                {data[col.key]}
+              </td>
+            ))}
           </tr>
         ))}
       </tbody>
