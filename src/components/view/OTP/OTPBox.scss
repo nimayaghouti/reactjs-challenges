@@ -1,0 +1,40 @@
+.otp-box {
+  @include flex($direction: column, $align: stretch, $justify: center);
+  width: 90%;
+  max-width: 25rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  padding: 1rem;
+  height: 25rem;
+  color: var(--black-2);
+}
+
+.otp-form {
+  @include flex(column, stretch, space-around);
+  gap: 2rem;
+  height: 100%;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__control {
+    @include flex(column, flex-start, center);
+    gap: 0.5rem;
+  }
+
+  &__hint {
+    color: var(--b3-2);
+    font-size: 0.75rem;
+  }
+
+  &__timer {
+    @include flex();
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+  }
+}

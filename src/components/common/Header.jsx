@@ -35,6 +35,9 @@ const Header = () => {
         <NavLink to="/form" className={linkClass}>
           Form
         </NavLink>
+        <NavLink to="/otp" className={linkClass}>
+          OTP
+        </NavLink>
       </nav>
     </header>
   );
