@@ -2,9 +2,20 @@ import { forwardRef } from "react";
 import "./Input.scss";
 
 const Input = forwardRef(
-  ({ label, error, maxWidth = "20rem", className, ...otherProps }, ref) => {
+  (
+    {
+      label,
+      error,
+      maxWidth = "20rem",
+      height = "unset",
+      className,
+      ...otherProps
+    },
+    ref
+  ) => {
     const inputStyle = {
       maxWidth,
+      height,
     };
     return (
       <div className={`form-group ${className}`} style={inputStyle}>

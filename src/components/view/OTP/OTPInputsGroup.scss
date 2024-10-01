@@ -1,0 +1,10 @@
+.inputs-group {
+  @include flex();
+  gap: 1rem;
+
+  &_text-center {
+    * {
+      text-align: center;
+    }
+  }
+}

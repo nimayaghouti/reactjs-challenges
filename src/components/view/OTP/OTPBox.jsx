@@ -1,5 +1,7 @@
 import Button from "@/components/common/Button";
+import OTPInputsGroup from "./OTPInputsGroup";
 import "./OTPBox.scss";
+
 const OTPBox = () => {
   return (
     <div className="otp-box">
@@ -9,7 +11,9 @@ const OTPBox = () => {
         </div>
         <div className="otp-form__control">
           <div className="otp-form__label">Confirmation Code:</div>
-          <div className="otp-form__inputs-group"></div>
+          <div className="otp-form__inputs-group">
+            <OTPInputsGroup inputsCount={6} />
+          </div>
           <div className="otp-form__hint">Enter the 6-digit code here</div>
         </div>
         <div className="otp-form__footer">

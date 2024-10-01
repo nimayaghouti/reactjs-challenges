@@ -23,6 +23,10 @@
     gap: 0.5rem;
   }
 
+  &__inputs-group {
+    width: 100%;
+  }
+
   &__hint {
     color: var(--b3-2);
     font-size: 0.75rem;
