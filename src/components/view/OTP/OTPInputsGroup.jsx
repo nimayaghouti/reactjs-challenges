@@ -2,9 +2,17 @@ import { useEffect, useRef } from "react";
 import Input from "@/components/common/Input";
 import "./OTPInputsGroup.scss";
 
-const OTPInputsGroup = ({ inputsCount }) => {
+const OTPInputsGroup = ({ inputsCount, onChange, otpValues }) => {
   const inputRefs = useRef([]);
   const inputs = Array.from({ length: inputsCount });
+
+  useEffect(() => {
+    inputRefs.current.forEach((input, index) => {
+      if (input) {
+        input.value = otpValues[index] || "";
+      }
+    });
+  }, [otpValues]);
 
   useEffect(() => {
     if (inputRefs.current[0]) {
@@ -12,24 +20,37 @@ const OTPInputsGroup = ({ inputsCount }) => {
     }
   }, []);
 
+  const checkAllInputsFilled = () => {
+    const values = inputRefs.current.map((input) => input?.value || "");
+    const isValid = values.every((value) => value !== "");
+    onChange(values, isValid);
+  };
+
   const handleKeyDown = (e, index) => {
     const allowedKeys = [
       "Backspace",
       "Tab",
+      "Delete",
       "ArrowLeft",
       "ArrowRight",
-      "Delete",
     ];
 
     if (allowedKeys.includes(e.key) || /^[0-9]$/.test(e.key)) {
-      if (e.key === "Backspace" && inputRefs.current[index]?.value === "") {
+      if (e.key === "Backspace" || e.key === "Delete") {
         e.preventDefault();
-        focusInput(index - 1);
+
+        inputRefs.current[index]?.value === ""
+          ? focusInput(index - 1)
+          : (inputRefs.current[index].value = "");
+
+        checkAllInputsFilled();
       } else if (/^[0-9]$/.test(e.key)) {
         e.preventDefault();
+
         inputRefs.current[index].value = e.key;
-        console.log(`Input ${index + 1} value:`, e.key);
         focusInput(index + 1);
+
+        checkAllInputsFilled();
       }
     } else {
       e.preventDefault();

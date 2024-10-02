@@ -18,6 +18,10 @@
       filter: brightness(1.2);
     }
 
+    &:focus {
+      border: 1px solid var(--black-2);
+    }
+
     &:active {
       filter: brightness(0.9);
     }
@@ -29,6 +33,10 @@
 
     &:hover {
       filter: brightness(0.9);
+    }
+
+    &:focus {
+      border: 1px solid var(--primary);
     }
 
     &:active {
