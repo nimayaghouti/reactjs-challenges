@@ -38,6 +38,9 @@ const Header = () => {
         <NavLink to="/otp" className={linkClass}>
           OTP
         </NavLink>
+        <NavLink to="/todo" className={linkClass}>
+          Todo
+        </NavLink>
       </nav>
     </header>
   );
