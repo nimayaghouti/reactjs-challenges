@@ -1,13 +1,21 @@
 import TodoItem from "./TodoItem";
+import { useTaskStore } from "../../../stores/useTaskStore";
 import "./TodoList.scss";
 
 const TodoList = () => {
+  const { tasks } = useTaskStore();
+  console.log(tasks);
   return (
     <div className="list">
-      <ul className="list__items">
-        <TodoItem className="list__item" />
-      </ul>
-      <p className="list__empty">No Todos</p>
+      {tasks.length === 0 ? (
+        <p className="list__empty">No Todos</p>
+      ) : (
+        <ul className="list__items">
+          {tasks.map((task) => (
+            <TodoItem key={task.id} task={task} className="list__item" />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
