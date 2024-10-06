@@ -7,14 +7,11 @@
   bottom: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  animation: outAnimation 0.3s ease-out;
+  animation-fill-mode: forwards;
 
   &_open {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s linear, visibility 0s;
+    animation: inAnimation 0.3s ease-in;
   }
 
   &__content {
@@ -26,11 +23,10 @@
     padding: 2rem;
     position: relative;
     gap: 2rem;
-    transform: scale(0.9);
-    transition: transform 0.3s linear;
+    animation: scaleOutAnimation 0.3s ease-out;
 
     .modal_open & {
-      transform: scale(1);
+      animation: scaleInAnimation 0.3s ease-in;
     }
   }
 
@@ -45,11 +41,49 @@
     right: 0;
     top: -10px;
     transform: translateY(-100%);
-    transition: 0.2s;
 
     &:hover {
       background-color: crimson;
       color: white;
     }
+  }
+}
+
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes outAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes scaleInAnimation {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOutAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
   }
 }
