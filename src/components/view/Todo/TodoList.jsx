@@ -4,7 +4,7 @@ import "./TodoList.scss";
 
 const TodoList = () => {
   const { tasks } = useTaskStore();
-  console.log(tasks);
+
   return (
     <div className="list">
       {tasks.length === 0 ? (
