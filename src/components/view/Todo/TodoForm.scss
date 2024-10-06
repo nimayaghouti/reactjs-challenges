@@ -1,0 +1,32 @@
+.todo-form {
+  @include flex($direction: column, $align: stretch);
+  align-self: stretch;
+  font-size: 1.2rem;
+  gap: 1rem;
+
+  &__title {
+    @include text-style($size: 1.5rem, $weight: 600);
+  }
+
+  &__control {
+    @include flex($direction: column, $align: stretch);
+    gap: 0.5rem;
+
+    select {
+      background-color: var(--bg-2);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:focus {
+        border: 1px solid var(--primary);
+      }
+    }
+  }
+
+  &__buttons {
+    @include flex($justify: flex-start);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}

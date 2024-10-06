@@ -12,7 +12,12 @@ const HomePage = () => {
       }}
     >
       <h1>Welcome to ReactJS Challenges</h1>
-      <ProgrammerIcon />
+      <div
+        className="programmer-icon"
+        style={{ width: "15rem", height: "15rem" }}
+      >
+        <ProgrammerIcon />
+      </div>
       <h3>Navigate between routes to see the different challanges.</h3>
     </div>
   );

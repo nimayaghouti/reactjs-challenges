@@ -19,7 +19,7 @@
 
   &__content {
     @include flex(column);
-    background-color: var(--bg-2);
+    background-color: var(--bg-1);
     border-radius: 0.8rem;
     max-width: 40rem;
     width: 90%;
@@ -31,6 +31,25 @@
 
     .modal_open & {
       transform: scale(1);
+    }
+  }
+
+  &__close-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--gray-1);
+    color: var(--black-2);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    transform: translateY(-100%);
+    transition: 0.2s;
+
+    &:hover {
+      background-color: crimson;
+      color: white;
     }
   }
 }

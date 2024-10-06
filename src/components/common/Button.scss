@@ -1,6 +1,7 @@
 .button {
   @include flex();
   @include text-style($weight: 700);
+  text-transform: capitalize;
   gap: 0.75rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
