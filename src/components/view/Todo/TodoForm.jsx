@@ -19,12 +19,20 @@ const TodoForm = ({ data = null, close }) => {
   });
 
   const onSubmit = (formData) => {
-    const newTask = {
-      ...formData,
-      id: Date.now(),
-      date: new Date(),
-    };
-    taskStore.addTask(newTask);
+    if (data) {
+      const updatedTask = {
+        ...data,
+        ...formData,
+      };
+      taskStore.updateTask(updatedTask);
+    } else {
+      const newTask = {
+        ...formData,
+        id: Date.now(),
+        date: new Date(),
+      };
+      taskStore.addTask(newTask);
+    }
     close();
   };
 
