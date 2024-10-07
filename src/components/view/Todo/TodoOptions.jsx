@@ -1,12 +1,10 @@
-import { useState } from "react";
 import Button from "@/components/common/Button";
 import TodoForm from "./TodoForm";
 import Modal from "@/components/common/Modal";
 import useModal from "@/hooks/useModal";
 import "./TodoOptions.scss";
 
-const TodoOptions = () => {
-  const [status, setStatus] = useState("all");
+const TodoOptions = ({ status, onStatusChange }) => {
   const { isOpen, openModal, closeModal } = useModal();
 
   return (
@@ -18,7 +16,7 @@ const TodoOptions = () => {
         <select
           className="options__select"
           value={status}
-          onChange={(e) => setStatus(e.target.value)}
+          onChange={(e) => onStatusChange(e.target.value)}
         >
           <option value="all">All</option>
           <option value="complete">Complete</option>

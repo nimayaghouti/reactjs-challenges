@@ -1,10 +1,8 @@
 import TodoItem from "./TodoItem";
-import { useTaskStore } from "../../../stores/useTaskStore";
+
 import "./TodoList.scss";
 
-const TodoList = () => {
-  const { tasks } = useTaskStore();
-
+const TodoList = ({ tasks }) => {
   return (
     <div className="list">
       {tasks.length === 0 ? (

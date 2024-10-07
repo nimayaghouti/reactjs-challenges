@@ -2,7 +2,12 @@ import ArrowLeftIcon from "@/assets/svg/ArrowLeftIcon";
 import ArrowRightIcon from "@/assets/svg/ArrowRightIcon";
 import "./Pagination.scss";
 
-const TablePagination = ({ totalPages, currentPage, onPageChange }) => {
+const TablePagination = ({
+  totalPages,
+  currentPage,
+  onPageChange,
+  className,
+}) => {
   const isPrevDisabled = currentPage <= 1;
   const isNextDisabled = currentPage >= totalPages;
 
@@ -35,7 +40,7 @@ const TablePagination = ({ totalPages, currentPage, onPageChange }) => {
   };
 
   return (
-    <ul className="pagination">
+    <ul className={`pagination ${className}`}>
       <li
         className={
           isPrevDisabled

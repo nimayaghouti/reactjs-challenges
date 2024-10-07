@@ -2,9 +2,14 @@
   @include flex($direction: column);
   max-width: 750px;
   width: 100%;
+  min-height: 580px;
 
   &__header {
     @include text-style($size: 2rem, $weight: 700);
     margin: 1.4rem auto 1rem;
+  }
+
+  &__pagination {
+    margin-top: auto;
   }
 }
